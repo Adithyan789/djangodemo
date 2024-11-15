@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+
+<h2 class="text-center">Login Here!</h2>
+
+<form method="POST" enctype="multipart/form-data">
+  <div class="container w-50 py-4">
+
+    {% csrf_token %}
+    <div class="mb-3">
+    <label  class="form-label">Username</label>
+    <input type="text" class="form-control" name="u" placeholder="Enter the Username">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Password</label>
+    <input type="password" class="form-control" name="p" placeholder="password">
+  </div>
+
+  <button type="submit" class="form-control btn btn-info">Submit</button>
+
+  </div>
+</form>
+{% endblock %}

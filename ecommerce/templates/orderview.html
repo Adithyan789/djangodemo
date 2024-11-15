@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="text-center">Order Details</h2>
+
+<div class="container mt-3 p-3 bg-secondary">
+{% for i in order %}
+<div class="card mb-3 mx-auto" style="max-width: 800px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{i.product.image.url}}" class="img-fluid rounded-start" alt="...">
+    </div>
+
+    <div class="col-md-8">
+      <div class="card-body">
+        <h4 class="card-title"><i>{{i.product.name}}</i></h4>
+        <p class="card-text"><b>Total Amount{{i.product.price}}</b></p>
+        <p class="card-text"><b>Quantity:{{i.no_of_items}}</b></p>
+          <p class="card-text"><b>Ordered Date:{{i.ordered_date}}</b></p>
+        <p class="card-text"><b>Order Id:{{i.order_id}}</b></p>
+          <p class="card-text text-danger"><b>Delivery Status:{{i.delivery_status}}</b></p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+  </div>
+{% endblock %}

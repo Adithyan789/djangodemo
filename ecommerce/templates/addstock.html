@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h3 class="text-center">Add Stock Page</h3>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+<div class="container w-50">
+  <div class="mb-3">
+    <label class="form-label">Add Stock</label>
+    <input type="number" class="form-control" name="s" value="{{pro.stock}}">
+  </div>
+
+    <button type="submit" class="btn btn-primary ">Submit</button>
+</div>
+</form>
+
+{% endblock %}

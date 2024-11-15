@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+
+<h2 class="text-center">Register Here!</h2>
+
+<form method="POST" enctype="multipart/form-data">
+  <div class="container w-50 py-4">
+
+    {% csrf_token %}
+    <div class="mb-3">
+    <label  class="form-label">Username</label>
+    <input type="text" class="form-control" name="u" placeholder="Enter the Username">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Password</label>
+    <input type="password" class="form-control" name="p" placeholder="password">
+  </div>
+
+      <div class="mb-3">
+    <label class="form-label">Confirm Password</label>
+    <input type="password" class="form-control" name="cp" placeholder="Confirm password">
+  </div>
+
+    <div class="mb-3">
+    <label class="form-label">First Name</label>
+    <input type="text" class="form-control" name="fn" placeholder="firstname">
+  </div>
+
+    <div class="mb-3">
+    <label class="form-label">Last Name</label>
+    <input type="text" class="form-control" name="ln" placeholder="Lastname">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Email address</label>
+    <input type="email" class="form-control" name="e" placeholder="Enter E-mail">
+  </div>
+
+  <button type="submit" class="form-control btn btn-info">Submit</button>
+    </div>
+</form>
+
+{% endblock %}
